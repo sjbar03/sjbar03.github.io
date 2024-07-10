@@ -16,6 +16,11 @@ nav {
     float: right;
 }
 
+a {
+    text-decoration: none;
+    color:  #123C69;
+}
+
 .nav_button {
     color: #123C69;
     text-decoration: none;
@@ -27,13 +32,13 @@ body {
     background-color: #EEE2DC;
 }
 
-main {
+.home_page {
+    display: flex;
     margin: auto;
     width: 800px;
-    display: flex;
     align-items: space-between;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 h1 {
@@ -50,15 +55,15 @@ h1 {
 .title1 {
     color: slategray;
     font-size: x-large;
-    align-items: center;
     display: flex;
+    margin: auto;
 }
 
 .title2 {
     color: #AC3B61;
     font-size: xx-large;
-    align-items: center;
-    display: flex
+    display: flex;
+    margin: auto;
 }
 
 .container {
@@ -98,8 +103,23 @@ h1 {
 
 h3 {
     align-content: center;
-    display: flex; 
     padding: 5px;
     padding-right: 20px;
     padding-left: 20px;
+}
+
+.about_page {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.about_section {
+    padding: 20px;
+    width: 850px;
+}
+
+.about_paragraph {
+    padding-left: 15px;
+    padding-right: 15px;
 }
