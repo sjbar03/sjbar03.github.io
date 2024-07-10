@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #BAB2B5;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    padding-inline: 10vw;
+    justify-content: space-between;
+}
+
+nav {
+    float: right;
+}
+
+.nav_button {
+    color: #123C69;
+    text-decoration: none;
+    font-size: 2vw;
+    padding-right: 30px;
+}
+
+body {
+    background-color: #EEE2DC;
+}
+
+main {
+    margin: auto;
+    width: 800px;
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3vw;
+    color: #123C69
+}
+
+.working_header {
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.title1 {
+    color: slategray;
+    font-size: x-large;
+    align-items: center;
+    display: flex;
+}
+
+.title2 {
+    color: #AC3B61;
+    font-size: xx-large;
+    align-items: center;
+    display: flex
+}
+
+.container {
+    display: flex;
+    font-size: larger;
+    text-indent: 2em;
+    line-height: 2em;
+    background-color: #BAB2B5;
+    padding: 10px;
+    width: fit-content;
+}
+
+.contact_container {
+    background-color: #BAB2B5;
+    width: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact_button {
+    text-decoration: none;
+    color: #123C69;
+}
+
+.working_on_section {
+    width: 500px;
+    padding: 10px;
+}
+
+.text {
+    padding: 20px;
+}
+
+.image {
+    padding: 20px
+}
+
+h3 {
+    align-content: center;
+    display: flex; 
+    padding: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
