@@ -50,20 +50,20 @@ h1 {
     display: flex;
     padding-bottom: 10px;
     padding-top: 10px;
+    align-items: center;
 }
 
-.title1 {
-    color: slategray;
+.workin_prompt {
+    color: #123C69;
     font-size: x-large;
     display: flex;
-    margin: auto;
+    font-style: oblique;
 }
 
-.title2 {
+.working_empha {
     color: #AC3B61;
     font-size: xx-large;
     display: flex;
-    margin: auto;
 }
 
 .container {
@@ -74,23 +74,7 @@ h1 {
     background-color: #BAB2B5;
     padding: 10px;
     width: fit-content;
-}
-
-.contact_container {
-    background-color: #BAB2B5;
-    width: fit-content;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.contact_button {
-    text-decoration: none;
-    color: #123C69;
-}
-
-.working_on_section {
-    width: 500px;
-    padding: 10px;
+    align-items: center;
 }
 
 .text {
@@ -123,3 +107,46 @@ h3 {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.page {
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    width: 1200px;
+    justify-content: center;
+    align-items: right;
+}
+
+.contact_aside {
+    background-color: #BAB2B5;
+    padding: 20px;
+    height: fit-content;
+}
+
+.page_content {
+    width: 800px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.blog_title {
+    font-size:2em;
+    color: #123C69;
+    padding-bottom: 20px;
+}
+
+.post {
+    padding:20px;
+    background-color: #EDC7B7;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.post_flex_divider {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+
+
