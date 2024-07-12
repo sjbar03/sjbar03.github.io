@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TerminalSnake</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <nav>
+                <a class="nav_button" href="../About/about_me.html">About</a>
+                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav_button" href="../Projects/projects.html">Projects</a>
+                <a class="nav_button" href="../Blog/blog.html">Blog</a>
+            </nav>
+        </header> 
+        <main class="page">
+            <section class="page_content">
+                <div class="blog_body">
+                    <h1>TerminalSnake Development Blog</h1>
+                    <h2>Overview</h2>
+                    <p>TerminalSnake is my first venture into C++. I wanted to
+                    build something fun, but also something that would challenge
+                    me. I set out to create a clone of <a
+                                                               href="https://en.wikipedia.org/wiki/Snake_(video_game_genre)"
+                                                               target="_blank">Snake</a>
+                    without using a GUI library. So, I set out learning ASCII
+                    escape codes and interfacing with the terminal.</p>
+                    <p>Realistically, I spent way too much time on this little
+                    project, but I don't regret it. C++ quickly became one of my
+                    favorite languages, especially since I had just completed my
+                    first ECE class and already had a comprehensive
+                    understanding of pointers.</p>
+                    <p>I will definitely be building more retro games
+                    in the future, possibly factoring out my code from this
+                    project into a terminal game engine.</p>
+                    <div class="gallery">
+                        <img src="snake_menu.png" alt="TerminalSnake menu"
+                        height="200px">
+                        <img src="snake_ingame.png" alt="TerminalSnake in game"
+                        height="200px">
+                        <img src="snake_help.png" alt="TerminalSnake help menu"
+                        height="200px">
+                    </div>
+                    <h2>Design Challenges</h2>
+                    <p>Achieving unbuffered input from the keyboard
+                    without hanging the game loop was a new type of challenge
+                    for me. I began using the <a
+                                                      href="https://en.wikipedia.org/wiki/Ncurses#:~:text=ncurses%20(new%20curses)%20is%20a,a%20computer%20terminal%2Dindependent%20manner."
+                                                      target="_blank">ncurses</a>
+                    library which provided the getch function, as well as
+                    various options for manipulating colors in the terminal.
+                    However, I discovered this libary was fidgety (at best) when
+                    it came to cross-compatibility, so I resolved to use only
+                    C++ standard libraries.</p>
+                    <h3>Pre-Processing Conditionals</h3>
+                    <p>Much to my chagrin, I discovered there was no universal
+                    way to recieve unbuffered input from the terminal in C++, so
+                    I was forced to learn more about pre-processing directives
+                    and how C++ programs interact with the operating system. By
+                    using conditionals, I was able to develop two seperate getch
+                    functions for Unix and Windows.</p>
+                    <p>Windows was easy, utilizing the conio.h library and its
+                    _getch function. Unix was a different bear. After combing
+                    through StackOverflow and interrogating ChatGPT, I developed
+                    this function:</p>
+                    <pre>
+                    <code>
+    char get_unbuffered_input()
+    {
+      char ch;
+      termios old_term;
+
+      // Get current terminal settings
+      tcgetattr(STDIN_FILENO, &old_term);
+
+      // Set terminal to unbuffered mode
+      set_unbuffered_mode(old_term);
+
+      // Read a single character
+      read(STDIN_FILENO, &ch, 1);
+
+      // Reset terminal to original mode
+      reset_terminal_mode(old_term);
+
+      return ch;
+    }
+                    </code>
+                    </pre>
+                    <p>In hindsight, I could have just included ncurses OR
+                    conio.h depending on the OS, but I learned a lot taking
+                    these extra steps, so no regrets.</p>
+                    <h3>Asynchronous Key Listener</h3>
+                    <p>My custom getch function, as well as the built in conio.h
+                    _getch functioned differently than the ncurses getch. There
+                    was no option to make these functions non-blocking, so I
+                    decided to run a listener loop in a seperate thread.</p>
+                    <p>This listener object keeps a reference to the input queue
+                    attribute of the main game. It loops continuously, checking
+                    for input every few milliseconds. When it detects input, it
+                    acquires the mutex on the queue, pushes the new input, then
+                    releases the mutex. Because this loop is running in a
+                    seperate thread, the main game loop will never be hung
+                    longer than the amount of time it takes the listener to push
+                    the new input.</p>
+                    <h2>Development Resources</h2>
+                    <ul>
+                        <li><a
+                                    href="https://www.codecademy.com/learn/learn-c-plus-plus"
+                                    target="_blank">Codecademy C++</a></li>
+                        <li><a
+                                    href="https://stackoverflow.com/questions/421860/capture-characters-from-standard-input-without-waiting-for-enter-to-be-pressed"
+                                    target="_blank">This StackOverflow
+                                    post</a></li>
+                        <li><a
+                                    href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170"
+                                    target="_blank">Microsoft
+                                    Documentation</a></li>
+                    </ul>
+                    <h2>GitHub Repository</h2>
+                    <ul>
+                        <li><a href="https://github.com/sjbar03/TerminalSnake"
+                               target="_blank">sjbar03/TerminalSnake</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="contact_aside">
+                <h2 class="contact-header">Contact me</h2>
+                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
+                              class="contact_button"
+                                         href="mailto:
+                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
+                <h3><img src="../github.png" width="20px">&nbsp <a
+                                             target="_blank" class="contact_button"
+                                            href="https://github.com/sjbar03">sjbar03</a></h3>
+                <h3><img src="../linkedin.png" width="20px">&nbsp <a
+                                               target="_blank" class="contact_button"
+                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
+                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
+                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
+                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
+                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
+            </section>
+        </main>
+    </body>
+</html>

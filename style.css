@@ -32,15 +32,6 @@ body {
     background-color: #EEE2DC;
 }
 
-.home_page {
-    display: flex;
-    margin: auto;
-    width: 800px;
-    align-items: space-between;
-    justify-content: center;
-    align-items: start;
-}
-
 h1 {
     font-size: 3vw;
     color: #123C69
@@ -196,6 +187,25 @@ h3 {
     padding-left: 0;
 }
 
+.blog_body ul {
+    margin-left: 5%;
+    font-size: 120%;
+    line-height: 150%;
+}
+
+pre {
+    display: flex;
+    justify-content: center;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    width: fit-content;
+    padding: 1%;
+}
+
 .image_left_text {
     display: flex;
     align-items: center;
@@ -204,4 +214,10 @@ h3 {
 
 .image_left_text p {
     margin-left: 10px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
 }
