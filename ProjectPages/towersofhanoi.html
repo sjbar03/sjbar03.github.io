@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Towers of Hanoi</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <nav>
+                <a class="nav_button" href="../About/about_me.html">About</a>
+                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav_button" href="../Projects/projects.html">Projects</a>
+                <a class="nav_button" href="../Blog/blog.html">Blog</a>
+            </nav>
+        </header> 
+        <main class="page">
+            <section class="page_content">
+                <div class="blog_body">
+                    <h1>Towers Of Hanoi Development Blog</h1>
+                    <h2>Overview</h2>
+                    <p>I originally was given the idea for this application
+                    during a CS 2800-Discrete Structures lecture in the fall of
+                    2023. Our professor suggested that a student in the class
+                    program a Towers of Hanoi simulator that would showcase it's
+                    recursive solution. At the time I thought this would be very
+                    cool, but I was intimidated as it was only my second
+                    semester in the CS program and I was swamped in coursework.
+                    After putting it off for months, I decided to make the
+                    application during my winter break.</p>
+                    <p>Marking my first personal project, this one is special to
+                    me. I felt so much pride when I finished it and had a real
+                    application I could show off to anyone who was interested. I
+                    am also excited to be sharing it here- on my blog.</p>
+                    <div class="gallery">
+                        <img src="toh_start.png" alt="Application Before
+                                                 Running" height="350px">
+                        <img src="toh_mid.png" alt="Application in middle of
+                                               running" height="350px">
+                        <img src="toh_end.png" alt="Application after solving"
+                        height="350px">
+                    </div>
+                    <h2>Design Challenges</h2>
+                    <p>Taking this initiative and starting this project from
+                    scratch was a big step for me. With minimal knowlege of
+                    program structure and no experience with git, I embarked on
+                    this jouney naked and afraid.</p>
+                    <p>I quickly got the hang of things, and while I didn't
+                    start using version control until much later- the files
+                    survived long enough to make it onto my GitHub after the
+                    fact.</p>
+                    <h3>Concurrency</h3>
+                    <p>During the original development of this sim, I ran into
+                    race conditions frequently. My understanding of concurrency
+                    was primitive, and my GUI was reading the gamestate before
+                    the backend finished updating it. The program would still
+                    run, but many bright red error messages would appear in the
+                    terminal.</p>
+                    <p>I came back to it much later and solved these issues.
+                    Where it sits today, I am satisfied to call it complete.</p>
+                    <h2>Development Resources</h2>
+                    <ul>
+                        <li><a href="https://docs.oracle.com/javase/8/docs/api/"
+                               target="_blank">Java API</a></li>
+                        <li><a
+                                    href="https://www.bairesdev.com/blog/java-concurrency/"
+                                    target="_blank">This Article</a></li>
+                    </ul>
+                    <h2>GitHub Repository</h2>
+                    <ul>
+                        <li><a href="https://github.com/sjbar03/Towers-of-Hanoi"
+                               target="_blank">sjbar03/Towers-of-Hanoi</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="contact_aside">
+                <h2 class="contact-header">Contact me</h2>
+                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
+                              class="contact_button"
+                                         href="mailto:
+                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
+                <h3><img src="../github.png" width="20px">&nbsp <a
+                                             target="_blank" class="contact_button"
+                                            href="https://github.com/sjbar03">sjbar03</a></h3>
+                <h3><img src="../linkedin.png" width="20px">&nbsp <a
+                                               target="_blank" class="contact_button"
+                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
+                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
+                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
+                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
+                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
+            </section>
+        </main>
+    </body>
+</html>
