@@ -188,9 +188,11 @@ h3 {
 }
 
 .blog_body ul {
-    margin-left: 5%;
+    margin-left: 3em;
     font-size: 120%;
     line-height: 150%;
+    color: slategray;
+    line-height: 2em;
 }
 
 pre {
