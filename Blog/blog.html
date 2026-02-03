@@ -1,55 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>blog</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <header>
-            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - sjbar03</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <a class="nav_button" href="../About/about_me.html">About</a>
-                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
-                <a class="nav_button" href="../Projects/projects.html">Projects</a>
-                <a class="nav_button" href="blog.html">Blog</a>
+                <a class="nav-link" href="../About/about_me.html">About</a>
+                <a class="nav-link" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav-link" href="../Projects/projects.html">Projects</a>
+                <a class="nav-link active" href="blog.html">Blog</a>
             </nav>
-        </header> 
-        <main class="page">
-            <section class="page_content">
-                <h2 class="blog_title">Posts</h2>
-                <section class="post">
-                    <div class="post_flex_divider">
-                        <div class="post_title_stack">
-                            <h2 class="post_title"><a
-                                href="../BlogPosts/chatgpt071724.html">ChatGPT as a code-reviewing
-                                pseduo-tutor</a></h2>
-                            <h3 class="post_desc">Commentary on AI in software
-                                development and education.</h3>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-layout">
+            <div class="page-content">
+                <h1 class="section-title">Posts</h1>
+                
+                <div class="post-list">
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../BlogPosts/chatgpt071724.html">ChatGPT as a code-reviewing pseudo-tutor</a>
+                                </h2>
+                                <p class="post-desc">Commentary on AI in software development and education.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">07/17/2024</p>
+                            </div>
                         </div>
-                        <div class="post_info_stack">
-                            <h3 class="post_date">07/17/2024</h3>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <section class="contact_aside">
-                <h2 class="contact-header">Contact me</h2>
-                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
-                              class="contact_button"
-                                         href="mailto:
-                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
-                <h3><img src="../github.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://github.com/sjbar03">sjbar03</a></h3>
-                <h3><img src="../linkedin.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
-                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
-                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
-                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
-            </section>
-        </main>
-        <footer>
-            <h1>Copyright Stephen Barlett, 2024. All rights reserved.</h1>
-        </footer>
-    </body>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="contact-sidebar">
+                <h2>Contact Me</h2>
+                <div class="contact-item">
+                    <img src="../email.png" alt="Email">
+                    <a href="mailto:sjbar03@gmail.com">sjbar03@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../github.png" alt="GitHub">
+                    <a href="https://github.com/sjbar03" target="_blank">sjbar03</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../linkedin.png" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/stephenbarlett" target="_blank">stephenbarlett</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../facebook.png" alt="Facebook">
+                    <a href="https://www.facebook.com/stephen.bar.14/" target="_blank">stephen.bar.14</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../instagram.png" alt="Instagram">
+                    <a href="https://www.instagram.com/stephenbarlett/" target="_blank">stephenbarlett</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Stephen Barlett. All rights reserved.</p>
+    </footer>
+</body>
 </html>

@@ -1,93 +1,98 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - sjbar03</title>
     <link rel="stylesheet" href="../style.css">
-    <title>About Me</title>
 </head>
-
-<html>
-    <body>
-        <header>
-            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <a class="nav_button" href="about_me.html">About</a>
-                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
-                <a class="nav_button" href="../Projects/projects.html">Projects</a>
-                <a class="nav_button" href="../Blog/blog.html">Blog</a>
+                <a class="nav-link active" href="about_me.html">About</a>
+                <a class="nav-link" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav-link" href="../Projects/projects.html">Projects</a>
+                <a class="nav-link" href="../Blog/blog.html">Blog</a>
             </nav>
-        </header> 
-        <main class="page">
-            <section class="page_content">
-                <h2 class="blog_title">About me</h2>
-                <div class="container">
-                    <img src="me2.jpg" width="40%">
-                    <div>
-                        <p class="about_paragraph">Hi, I'm Stephen Barlett. I'm a third year computer science major
-                        at Cornell University. Presently, I'm pursuing a minor
-                        in Electrical and Computer Engineering with a focus on
-                        computer Architecture.</p>
-                        <p class="about_paragraph">So far I've studied data
-                        structures and algorithms, digital logic, software engineering, OOP, and
-                        functional programming. In the coming semesters, I'll be
-                        studying operating systems and computer
-                        architecture.</p>
-                        <p class="about_paragraph">I am actively seeking an
-                        internship in low-level software engineering or hardware
-                        engineering.</p>
-                    </div>
-                </div>
-                <h2 class="blog_title" style="padding-bottom: 0;">My Hobbies</h2>
-                <div class="hobbies">
-                    <h3>Automotive Mechanic</h3>
-                    <div class="container" style="display: block;">
-                        <div class="gallery">
-                            <img src="brakes.png" height="300px">
-                            <img src="junkeclipse.png" height="300px">
-                            <img src="escape.png" height="300px">
-                        </div>
-                        <p>I drive a 2003 Mitsubishi
-                        Eclipse, and over the last four years of ownership I've
-                        learned from my dad how to work on it and keep it on the
-                        road. Now, I do all of the service that my car needs and
-                        I even get to use my skills to help out my family on
-                        occasion.
-                        </p>
-                        <p>I've replaced power steering
-                        components, radiators, AC compressors, brakes, and many
-                        other components.</p>
-                    </div>
-                    <h3>PC Building</h3>
-                    <div class="container" style="display: block;">
-                        <div class="gallery">
-                            <img src="setup.png" height="300px">
-                            <img src="inside_pc.png" height="300px">
-                        </div>
-                        <p> I've never had the budget for large flashy builds,
-                        but I've always enjoyed piecing together second-hand
-                        components off of ebay into something that works. This
-                        hobbie has given me an intricate understanding of how
-                        computers work and inspired my minor in ECE.</p>
-                    </div>
-                </div>
-            </section>
-            <section class="contact_aside">
-                <h2 class="contact-header">Contact me</h2>
-                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
-                              class="contact_button"
-                                         href="mailto:
-                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
-                <h3><img src="../github.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://github.com/sjbar03">sjbar03</a></h3>
-                <h3><img src="../linkedin.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
-                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
-                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
-                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
-            </section>
-        </main>
-        <footer>
-            <h1>Copyright Stephen Barlett, 2024. All rights reserved.</h1>
-        </footer>
-    </body>
-</html>
+        </div>
+    </header>
 
+    <main>
+        <div class="page-layout">
+            <div class="page-content">
+                <h1 class="section-title">About Me</h1>
+                
+                <div class="about-intro">
+                    <img src="me2.jpg" alt="Stephen Barlett">
+                    <div class="about-intro-text">
+                        <p>Hi, I'm Stephen Barlett. I'm a third year computer science major at Cornell University. Presently, I'm pursuing a minor in Electrical and Computer Engineering with a focus on computer Architecture.</p>
+                        <p>So far I've studied data structures and algorithms, digital logic, software engineering, OOP, and functional programming. In the coming semesters, I'll be studying operating systems and computer architecture.</p>
+                        <p>I am actively seeking an internship in low-level software engineering or hardware engineering.</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">My Hobbies</h2>
+
+                <div class="hobby-section">
+                    <h3>Automotive Mechanic</h3>
+                    <div class="hobby-content">
+                        <div class="gallery gallery-3">
+                            <img src="brakes.png" alt="Brake work">
+                            <img src="junkeclipse.png" alt="Mitsubishi Eclipse">
+                            <img src="escape.png" alt="Car repair">
+                        </div>
+                        <p>I drive a 2003 Mitsubishi Eclipse, and over the last four years of ownership I've learned from my dad how to work on it and keep it on the road. Now, I do all of the service that my car needs and I even get to use my skills to help out my family on occasion.</p>
+                        <p>I've replaced power steering components, radiators, AC compressors, brakes, and many other components.</p>
+                    </div>
+                </div>
+
+                <div class="hobby-section">
+                    <h3>PC Building</h3>
+                    <div class="hobby-content">
+                        <div class="gallery gallery-2">
+                            <img src="setup.png" alt="Desktop setup">
+                            <img src="inside_pc.png" alt="Inside PC">
+                        </div>
+                        <p>I've never had the budget for large flashy builds, but I've always enjoyed piecing together second-hand components off of eBay into something that works. This hobby has given me an intricate understanding of how computers work and inspired my minor in ECE.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="contact-sidebar">
+                <h2>Contact Me</h2>
+                <div class="contact-item">
+                    <img src="../email.png" alt="Email">
+                    <a href="mailto:sjbar03@gmail.com">sjbar03@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../github.png" alt="GitHub">
+                    <a href="https://github.com/sjbar03" target="_blank">sjbar03</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../linkedin.png" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/stephenbarlett" target="_blank">stephenbarlett</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../facebook.png" alt="Facebook">
+                    <a href="https://www.facebook.com/stephen.bar.14/" target="_blank">stephen.bar.14</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../instagram.png" alt="Instagram">
+                    <a href="https://www.instagram.com/stephenbarlett/" target="_blank">stephenbarlett</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Stephen Barlett. All rights reserved.</p>
+    </footer>
+</body>
+</html>

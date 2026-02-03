@@ -1,102 +1,141 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>projects</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <header>
-            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - sjbar03</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <a class="nav_button" href="../About/about_me.html">About</a>
-                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
-                <a class="nav_button" href="projects.html">Projects</a>
-                <a class="nav_button" href="../Blog/blog.html">Blog</a>
+                <a class="nav-link" href="../About/about_me.html">About</a>
+                <a class="nav-link" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav-link active" href="projects.html">Projects</a>
+                <a class="nav-link" href="../Blog/blog.html">Blog</a>
             </nav>
-        </header> 
-        <main class="page">
-            <section class="page_content">
-                <div style="display: flex; align-items:baseline;">
-                    <h2 class="blog_title">Projects</h2>
-                    <h5 style="margin-left: 1%; color: slategray;">(Click on title for more info)</h5>
-                </div>
-                <section class="post">
-                    <div class="post_flex_divider">
-                        <div class="post_title_stack">
-                            <h2 class="post_title"><a
-                                href="../ProjectPages/pillpal.html">PillPal</a></h2>
-                            <h3 class="post_desc">A versatile study tool for
-                                pharmacy students.</h3>
-                        </div>
-                        <div class="post_info_stack">
-                            <h3 class="post_date">July 2024</h3>
-                            <img class="lang_icon" src="../python.png" width="30px">
-                        </div>
-                    </div>
-                </section>
-                <section class="post">
-                    <div class="post_flex_divider">
-                        <div class="post_title_stack">
-                            <h2 class="post_title"><a
-                                href="../ProjectPages/terminalsnake.html">TerminalSnake</a></h2>
-                            <h3 class="post_desc">A clone of the classic game
-                                Snake, entirely in the terminal.</h3>
-                        </div>
-                        <div class="post_info_stack">
-                            <h3 class="post_date">June 2024</h3>
-                            <img class="lang_icon" src="../cpp.png" width="30px">
-                        </div>
-                    </div>
-                </section>    
-                 <section class="post">
-                    <div class="post_flex_divider">
-                        <div class="post_title_stack">
-                            <h2 class="post_title"><a
-                                href="../ProjectPages/camelcapital.html">CamelCapital</a></h2>
-                            <h3 class="post_desc">A GUI-based paper trading
-                                application.</h3>
-                        </div>
-                        <div class="post_info_stack">
-                            <h3 class="post_date">August 2024</h3>
-                            <img class="lang_icon" src="../ocaml.png" width="30px">
-                        </div>
-                    </div>
-                </section>    
-                  <section class="post">
-                    <div class="post_flex_divider">
-                        <div class="post_title_stack">
-                            <h2 class="post_title"><a
-                                href="../ProjectPages/towersofhanoi.html">Towers of Hanoi</h2>
-                            <h3 class="post_desc">A visually appealing and
-                                interactive Towers of Hanoi simulator.</h3>
-                        </div>
-                        <div class="post_info_stack">
-                            <h3 class="post_date">January 2024</h3>
-                            <img class="lang_icon" src="../java.png" width="30px">
-                        </div>
-                    </div>
-                </section>              </section>
-            <section class="contact_aside">
-                <h2 class="contact-header">Contact me</h2>
-                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
-                              class="contact_button"
-                                         href="mailto:
-                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
-                <h3><img src="../github.png" width="20px">&nbsp <a
-                                             target="_blank" class="contact_button"
-                                            href="https://github.com/sjbar03">sjbar03</a></h3>
-                <h3><img src="../linkedin.png" width="20px">&nbsp <a
-                                               target="_blank" class="contact_button"
-                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
-                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
-                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
-                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
-            </section>
-        </main>
-        <footer>
-            <h1>Copyright Stephen Barlett, 2024. All rights reserved.</h1>
-        </footer>
+        </div>
+    </header>
 
-    </body>
+    <main>
+        <div class="page-layout">
+            <div class="page-content">
+                <h1 class="section-title">Projects <span class="section-subtitle">(Click title for details)</span></h1>
+                
+                <div class="post-list">
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../ProjectPages/craytracer.html">CRayTracer</a>
+                                </h2>
+                                <p class="post-desc">Low-level ray tracer written in C, eventually accelerated via FPGA.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">January 2026</p>
+                                <img src="../c.png" alt="">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../ProjectPages/pillpal.html">PillPal</a>
+                                </h2>
+                                <p class="post-desc">A versatile study tool for pharmacy students.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">July 2024</p>
+                                <img src="../python.png" alt="Python">
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../ProjectPages/camelcapital.html">CamelCapital</a>
+                                </h2>
+                                <p class="post-desc">A GUI-based paper trading application.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">August 2024</p>
+                                <img src="../ocaml.png" alt="OCaml">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../ProjectPages/terminalsnake.html">TerminalSnake</a>
+                                </h2>
+                                <p class="post-desc">A clone of the classic game Snake, entirely in the terminal.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">June 2024</p>
+                                <img src="../cpp.png" alt="C++">
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-header">
+                            <div class="post-info">
+                                <h2 class="post-title">
+                                    <a href="../ProjectPages/towersofhanoi.html">Towers of Hanoi</a>
+                                </h2>
+                                <p class="post-desc">A visually appealing and interactive Towers of Hanoi simulator.</p>
+                            </div>
+                            <div class="post-meta">
+                                <p class="post-date">January 2024</p>
+                                <img src="../java.png" alt="Java">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="contact-sidebar">
+                <h2>Contact Me</h2>
+                <div class="contact-item">
+                    <img src="../email.png" alt="Email">
+                    <a href="mailto:sjbar03@gmail.com">sjbar03@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../github.png" alt="GitHub">
+                    <a href="https://github.com/sjbar03" target="_blank">sjbar03</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../linkedin.png" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/stephenbarlett" target="_blank">stephenbarlett</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../facebook.png" alt="Facebook">
+                    <a href="https://www.facebook.com/stephen.bar.14/" target="_blank">stephen.bar.14</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../instagram.png" alt="Instagram">
+                    <a href="https://www.instagram.com/stephenbarlett/" target="_blank">stephenbarlett</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Stephen Barlett. All rights reserved.</p>
+    </footer>
+</body>
 </html>

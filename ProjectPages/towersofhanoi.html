@@ -1,99 +1,94 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Towers of Hanoi</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <header>
-            <h1><a href="../index.html">sjbar03's Dev Blog</a></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towers of Hanoi - sjbar03</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"><a href="../index.html">sjbar03's Dev Blog</a></h1>
+            <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <a class="nav_button" href="../About/about_me.html">About</a>
-                <a class="nav_button" href="../Workflow/workflow.html">Workflow</a>
-                <a class="nav_button" href="../Projects/projects.html">Projects</a>
-                <a class="nav_button" href="../Blog/blog.html">Blog</a>
+                <a class="nav-link" href="../About/about_me.html">About</a>
+                <a class="nav-link" href="../Workflow/workflow.html">Workflow</a>
+                <a class="nav-link" href="../Projects/projects.html">Projects</a>
+                <a class="nav-link" href="../Blog/blog.html">Blog</a>
             </nav>
-        </header> 
-        <main class="page">
-            <section class="page_content">
-                <div class="blog_body">
+        </div>
+    </header>
+
+    <main>
+        <div class="page-layout">
+            <div class="page-content">
+                <article class="article-content">
                     <h1>Towers Of Hanoi Development Blog</h1>
+                    
                     <h2>Overview</h2>
-                    <p>I originally was given the idea for this application
-                    during a CS 2800-Discrete Structures lecture in the fall of
-                    2023. Our professor suggested that a student in the class
-                    program a Towers of Hanoi simulator that would showcase it's
-                    recursive solution. At the time I thought this would be very
-                    cool, but I was intimidated as it was only my second
-                    semester in the CS program and I was swamped in coursework.
-                    After putting it off for months, I decided to make the
-                    application during my winter break.</p>
-                    <p>Marking my first personal project, this one is special to
-                    me. I felt so much pride when I finished it and had a real
-                    application I could show off to anyone who was interested. I
-                    am also excited to be sharing it here- on my blog.</p>
-                    <div class="gallery">
-                        <img src="toh_start.png" alt="Application Before
-                                                 Running" height="350px">
-                        <img src="toh_mid.png" alt="Application in middle of
-                                               running" height="350px">
-                        <img src="toh_end.png" alt="Application after solving"
-                        height="350px">
+                    <p>I originally was given the idea for this application during a CS 2800-Discrete Structures lecture in the fall of 2023. Our professor suggested that a student in the class program a Towers of Hanoi simulator that would showcase its recursive solution. At the time I thought this would be very cool, but I was intimidated as it was only my second semester in the CS program and I was swamped in coursework. After putting it off for months, I decided to make the application during my winter break.</p>
+                    <p>Marking my first personal project, this one is special to me. I felt so much pride when I finished it and had a real application I could show off to anyone who was interested. I am also excited to be sharing it here- on my blog.</p>
+                    
+                    <div class="gallery gallery-3">
+                        <img src="toh_start.png" alt="Application before running">
+                        <img src="toh_mid.png" alt="Application in middle of running">
+                        <img src="toh_end.png" alt="Application after solving">
                     </div>
+                    
                     <h2>Design Challenges</h2>
-                    <p>Taking this initiative and starting this project from
-                    scratch was a big step for me. With minimal knowlege of
-                    program structure and no experience with git, I embarked on
-                    this jouney naked and afraid.</p>
-                    <p>I quickly got the hang of things, and while I didn't
-                    start using version control until much later- the files
-                    survived long enough to make it onto my GitHub after the
-                    fact.</p>
+                    <p>Taking this initiative and starting this project from scratch was a big step for me. With minimal knowledge of program structure and no experience with git, I embarked on this journey naked and afraid.</p>
+                    <p>I quickly got the hang of things, and while I didn't start using version control until much later- the files survived long enough to make it onto my GitHub after the fact.</p>
+                    
                     <h3>Concurrency</h3>
-                    <p>During the original development of this sim, I ran into
-                    race conditions frequently. My understanding of concurrency
-                    was primitive, and my GUI was reading the gamestate before
-                    the backend finished updating it. The program would still
-                    run, but many bright red error messages would appear in the
-                    terminal.</p>
-                    <p>I came back to it much later and solved these issues.
-                    Where it sits today, I am satisfied to call it complete.</p>
+                    <p>During the original development of this sim, I ran into race conditions frequently. My understanding of concurrency was primitive, and my GUI was reading the gamestate before the backend finished updating it. The program would still run, but many bright red error messages would appear in the terminal.</p>
+                    <p>I came back to it much later and solved these issues. Where it sits today, I am satisfied to call it complete.</p>
+                    
                     <h2>Development Resources</h2>
                     <ul>
-                        <li><a href="https://docs.oracle.com/javase/8/docs/api/"
-                               target="_blank">Java API</a></li>
-                        <li><a
-                                    href="https://www.bairesdev.com/blog/java-concurrency/"
-                                    target="_blank">This Article</a></li>
+                        <li><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank">Java API</a></li>
+                        <li><a href="https://www.bairesdev.com/blog/java-concurrency/" target="_blank">This Article on Java Concurrency</a></li>
                     </ul>
+                    
                     <h2>GitHub Repository</h2>
                     <ul>
-                        <li><a href="https://github.com/sjbar03/Towers-of-Hanoi"
-                               target="_blank">sjbar03/Towers-of-Hanoi</a></li>
+                        <li><a href="https://github.com/sjbar03/Towers-of-Hanoi" target="_blank">sjbar03/Towers-of-Hanoi</a></li>
                     </ul>
-                </div>
-            </section>
-            <section class="contact_aside">
-                <h2 class="contact-header">Contact me</h2>
-                <h3><img src="../email.png" width="20px">&nbsp <a target="_blank" 
-                              class="contact_button"
-                                         href="mailto:
-                                         sjbar03@gmail.com">sjbar03@gmail.com</a></h3>
-                <h3><img src="../github.png" width="20px">&nbsp <a
-                                             target="_blank" class="contact_button"
-                                            href="https://github.com/sjbar03">sjbar03</a></h3>
-                <h3><img src="../linkedin.png" width="20px">&nbsp <a
-                                               target="_blank" class="contact_button"
-                                            href="https://www.linkedin.com/in/stephenbarlett">stephenbarlett</a></h3>  
-                <h3><img src="../facebook.png" width="20px">&nbsp <a target="_blank" class="contact_button"
-                                            href="https://www.facebook.com/stephen.bar.14/">stephen.bar.14</a></h3>
-                <h3><img src="../instagram.png" width="20">&nbsp <a target="_blank" class="contact_button"
-                                             href="https://www.instagram.com/stephenbarlett/">stephenbarlett</a></h3>
-            </section>
-        </main>
-        <footer>
-            <h1>Copyright Stephen Barlett, 2024. All rights reserved.</h1>
-        </footer>
+                </article>
+            </div>
 
-    </body>
+            <aside class="contact-sidebar">
+                <h2>Contact Me</h2>
+                <div class="contact-item">
+                    <img src="../email.png" alt="Email">
+                    <a href="mailto:sjbar03@gmail.com">sjbar03@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../github.png" alt="GitHub">
+                    <a href="https://github.com/sjbar03" target="_blank">sjbar03</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../linkedin.png" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/stephenbarlett" target="_blank">stephenbarlett</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../facebook.png" alt="Facebook">
+                    <a href="https://www.facebook.com/stephen.bar.14/" target="_blank">stephen.bar.14</a>
+                </div>
+                <div class="contact-item">
+                    <img src="../instagram.png" alt="Instagram">
+                    <a href="https://www.instagram.com/stephenbarlett/" target="_blank">stephenbarlett</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Stephen Barlett. All rights reserved.</p>
+    </footer>
+</body>
 </html>
