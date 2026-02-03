@@ -17,7 +17,7 @@
             </button>
             <nav>
                 <a class="nav-link" href="../About/about_me.html">About</a>
-                <a class="nav-link" href="../Workflow/workflow.html">Workflow</a>
+                <!-- <a class="nav-link" href="../Workflow/workflow.html">Workflow</a> -->
                 <a class="nav-link" href="../Projects/projects.html">Projects</a>
                 <a class="nav-link" href="../Blog/blog.html">Blog</a>
             </nav>
@@ -31,7 +31,15 @@
                     <h1>C Ray Tracer Development Blog</h1>
                     
                     <h2>Overview</h2>
-                    <p>Project description goes here...</p>
+                    <p>I took on this project after taking CS4620 (Intro to Graphics) in the Fall of 2025. We went over ray tracing in that course, however we did all of our ray tracing assingments in Python, something I was not a fan of. 
+                        Being a person who is fond of optimization, I naturally decided to write my own ray tracer in C. Additionally, at the time of writing this I am enrolled in ECE5760 (Hardware Acceleration via FPGA), a topic that translates
+                        well to low-level optimization - especially for Ray Tracing. In its current state, the project is designed to compile and run on Windows, but I am designing the infrastructure in a way that should allow me to easily port 
+                        the design to the DE1-SOC FPGA and display on a 640x480p VGA screen. I aim to develop a working version of the HDL to accelerate this program before May of this year (while I still have access to Cornell's FPGAs).
+                    </p>
+                    <p>
+                        I am hoping that this project will be the first of many in which I explore low-level graphics, and hardware acceleration. Naturally, next in line will be rasterization. I will certainly be developing a similarly natured FPGA project before my graduation in May as a final
+                        project for ECE5760, but the topic is still TBD. I'll be sure to document my progress here!
+                    </p>
                     
                     <!-- Optional: Image gallery
                     <div class="gallery gallery-3">
@@ -42,7 +50,10 @@
                     -->
                     
                     <h2>Design Challenges</h2>
-                    <p>Challenges description goes here...</p>
+                        <h3>Win32 API</h3>
+                        <p>Ironically the first roadblock I ran into during development was utilizing the Win32 API that windows provides for creating a window and drawing to it using GDI. I chose GDI because it gives me the same pixel-level manipulation as the VGA Driver that I will use when porting this to the DE1.
+                            In an ideal world, this should allow me to swap out the small Windows graphics library I've created with the VGA Driver. However, this API was brand new to me, so it took some considerable reading up. Noteworthy references will be listed below.
+                        </p>
                     
                     <!-- Optional: Image with text
                     <div class="image-text-row">
@@ -53,8 +64,8 @@
                     
                     <h2>Development Resources</h2>
                     <ul>
-                        <li><a href="#" target="_blank">Resource 1</a></li>
-                        <li><a href="#" target="_blank">Resource 2</a></li>
+                        <li><a href="https://youtu.be/q1fMa8Hufmg?si=RJWmBashUnAvsoGW" target="_blank">Nick Walton's YouTube video on Win32 GDI</a></li>
+                        <li><a href="https://learn.microsoft.com/en-us/windows/win32/api/" target="_blank">Microsoft Win32 Documentation</a></li>
                     </ul>
                     
                     <h2>GitHub Repository</h2>
