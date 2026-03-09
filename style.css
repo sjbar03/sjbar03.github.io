@@ -299,6 +299,38 @@ main {
     margin-left: auto;
 }
 
+/* ===== Empty State ===== */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--bg-card);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+}
+
+.empty-state-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state-title {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
 /* ===== Blog/Project Article Content ===== */
 .article-content {
     max-width: 800px;
