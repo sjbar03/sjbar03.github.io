@@ -33,8 +33,9 @@
                     <h2>Overview</h2>
                     <p>I took on this project after taking CS4620 (Intro to Graphics) in the Fall of 2025. We went over ray tracing in that course, however we did all of our ray tracing assingments in Python, something I was not a fan of. 
                         Being a person who is fond of optimization, I naturally decided to write my own ray tracer in C. Additionally, at the time of writing this I am enrolled in ECE5760 (Hardware Acceleration via FPGA), a topic that translates
-                        well to low-level optimization - especially for Ray Tracing. In its current state, the project is designed to compile and run on Windows, but I am designing the infrastructure in a way that should allow me to easily port 
-                        the design to the DE1-SOC FPGA and display on a 640x480p VGA screen. I aim to develop a working version of the HDL to accelerate this program before May of this year (while I still have access to Cornell's FPGAs).
+                        well to low-level optimization - especially for Ray Tracing. In its current state, the project is designed to compile and run on Windows, but I am designing the infrastructure in a way that should lend itself to FPGA acceleration.
+                        The target FPGA is the Xilinx UltraScale+ XCKU5P - a very capable FPGA on a unnamed bare-bones development board that I found on AliExpress. I've been exploring the Vivado toolset and designing a PCB to facilitate HDMI and USB
+                        connectivity on the FPGA.    
                     </p>
                     <p>
                         I am hoping that this project will be the first of many in which I explore low-level graphics, and hardware acceleration. Naturally, next in line will be rasterization. I will certainly be developing a similarly natured FPGA project before my graduation in May as a final
@@ -50,10 +51,19 @@
                     -->
                     
                     <h2>Design Challenges</h2>
-                        <h3>Win32 API</h3>
-                        <p>Ironically the first roadblock I ran into during development was utilizing the Win32 API that windows provides for creating a window and drawing to it using GDI. I chose GDI because it gives me the same pixel-level manipulation as the VGA Driver that I will use when porting this to the DE1.
-                            In an ideal world, this should allow me to swap out the small Windows graphics library I've created with the VGA Driver. However, this API was brand new to me, so it took some considerable reading up. Noteworthy references will be listed below.
-                        </p>
+                        <h3>SDL3 Library</h3>
+                        <p>The first step in this project was creating a window to draw pixels to the screen. This is something that I had never done before in C, so it was rather intimidating. I began development on a Windows system, so I started with the Win32 API. This was painful, but I figured it out.
+                        Shortly after this, I realized that it made more sense to use a cross-platform library so that I could develop on a variety of devices. SDL3 appeared to be the best choice for a cross-platform window API. Using the SDL3 documentation, and referencing several 
+                        <a href=https://examples.libsdl.org/SDL3/>example SDL3 projects</a>, I wrote a simple front end that reads a pixel buffer and serves it to SDL. I did this in anticipation of swapping the SDL3 head for an HDMI driver when I move my engine to an FPGA.</p>
+
+                        <h3>Fixed Point Arithmetic</h3>
+                        <p>Fixed point arithmetic can greatly accelerate fractional math (relative to floating point arithmetic) on embedded platforms and FPGAs. There are some fixed point libraries available for C, but they often come with unnescessary overhead. Because of this, I decided to implement my own 
+                        fixed-point linalg/vector-math library. Using the resources on <a href="https://vanhunteradams.com/FixedPoint/FixedPoint.html">Hunter Adam's ECE4760 website</a>, I adapted several helpful fixed point macros for my purposes. I then wrote a 3-D vector math library based on this fixed point type,
+                        implementing many graphics-relevant vector operations.</p>
+
+                        <p>I chose to build this engine using fixed-point arithmetic for all relevant calculations. Again, I did this in preparation for FPGA acceleration. Fixed point multiplication can be easily accelerated using fast digital signal processing (DSP) blocks on the FPGA. The target Kintex FPGA 
+                        has 1,824 27x18 DSP slices. One thing to be careful of is the bitwidth of the multiplies. As of writing this, my engine uses 17.15 fixed point (32 bit). Vivado will synthesize a 32x32 integer multiply to use 4 DSPs - greatly reducing the effective number of
+                        hard multipliers available on the board. I will likely change my fixed point library to use 8.19 fixed point (27 bits) - trading precision for efficiency.</p>
                     
                     <!-- Optional: Image with text
                     <div class="image-text-row">
@@ -61,11 +71,17 @@
                         <p>Explanation of the image...</p>
                     </div>
                     -->
+
+                    <h2>Progress</h2>
+                    <div class="image-text-row">
+                        <img src="raytracer-diffuse1.jpg" alt="Diffuse-Textures Progress Update">
+                    </div>
                     
                     <h2>Development Resources</h2>
                     <ul>
-                        <li><a href="https://youtu.be/q1fMa8Hufmg?si=RJWmBashUnAvsoGW" target="_blank">Nick Walton's YouTube video on Win32 GDI</a></li>
-                        <li><a href="https://learn.microsoft.com/en-us/windows/win32/api/" target="_blank">Microsoft Win32 Documentation</a></li>
+                        <li><a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend - Peter Shirley</a>
+                        <li><a href="https://wiki.libsdl.org/SDL3/FrontPage">SDL3 Wiki</a>
+                        <li><a href="https://vanhunteradams.com/FixedPoint/FixedPoint.html">Fixed Point Arithmetic - Van Hunter Adams</a>
                     </ul>
                     
                     <h2>GitHub Repository</h2>
